@@ -1,0 +1,76 @@
+<style>
+  .card {
+    width: 200px;
+    height: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 #F5F5F5;
+    }
+</style>
+<h1 id="tableLabel" class="title">Participanții</h1>
+<br />
+<p>Aici este lista cu toți participanții.</p>
+
+<p *ngIf="!persons"><em>Loading...</em></p>
+<table class='table table-dark table-striped' aria-labelledby="tableLabel" *ngIf="persons">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Category</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      
+      <td>{{ person.name }}</td>
+      <td>{{ person.age }}</td>
+      <td>{{person.categoryCompetition}}</td>
+      <td>{{ person.role }}</td>
+      <td><button class="btn" (click)="deletePerson(person)">delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button class="btn float-right" [routerLink]="['/person-add']">Add person</button>
+
+<div class="row">
+  <div class=" d-flex justify-content-center col">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title">Participanti</h5>
+          </div>
+          <div class="col">
+            <h1 style="color:black">
+              {{currentParticipants}}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class=" d-flex justify-content-center col">
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <h5 class="card-title">Corectori</h5>
+          </div>
+          <div class="col">
+            <h1 style="color:black">
+              {{currentCorrectors}}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

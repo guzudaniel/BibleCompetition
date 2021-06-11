@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Talantul în Negoț</h1>
+<br />
+
+<p>Aici este lista cu toate concursurile.</p>
+
+<p *ngIf="!competitions"><em>Loading...</em></p>
+
+<table class='table table-dark table-striped' aria-labelledby="tableLabel" *ngIf="competitions">
+  <thead>
+    <tr>
+      <th>Cartea</th>
+      <th>Anul</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let competition of competitions">
+      <td>{{ competition.book }}</td>
+      <td>{{ competition.year }}</td>
+      <td><button class="btn" (click)="deleteCompetition(competition)">delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<button class="btn float-right" [routerLink]="['/competition-add']">Adaugă Concurs</button>

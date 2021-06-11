@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+html, body {
+  height: 100%;
+}
+code {
+  color: #e01a76;
+}
+.btn {
+  background-color: #4CAF50;
+}
+  .btn:hover {
+    background-color: #45a049;
+  }
+body {
+  background: url(assets/img/background.png) no-repeat center center fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+h1,h3,h2,p{
+    color:white;
+}

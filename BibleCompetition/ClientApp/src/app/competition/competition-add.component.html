@@ -1,0 +1,44 @@
+<style>
+  input[type=text], input[type=date],select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+  }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+  input[type=text]:hover, input[type=date]:hover{
+    background-color: #F5F5F5;
+  }
+</style>
+<h1 id="tableLabel" class="title">Adăugare concurs</h1>
+<br />
+<br />
+<div>
+  <form>
+    <h3><label for="book">Cartea:</label></h3>
+    <input id="book" name="book" type="text" placeholder="Cartea concursului.." [(ngModel)]="competition.book">
+    <h3><label for="date">Anul concursului:</label></h3>
+    <input id="date" name="date" type="text" placeholder="Data Concursului.. " [(ngModel)]="competition.year">
+    
+    <input type="submit" (click)="saveCompetition()" value="Salvare Concurs">
+  </form>
+</div>
+
